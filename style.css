@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #393e46;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+.todo--header {
+  text-align: center;
+  background: #eeeeee;
+  margin: 3rem 1rem 1rem;
+  padding: 10px;
+  width: 33rem;
+  border-radius: 9%;
+}
+
+.submission {
+  text-align: center;
+  /* position: relative; */
+}
+
+.todo--list_new_item {
+  padding: 10px;
+  width: 20rem;
+  text-align: center;
+  letter-spacing: .3rem;
+  text-transform:capitalize;
+  outline: none;
+}
+
+.btn--add {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all .2s;
+  background: #00adb5;
+  color: #eeeeee;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.btn--add:hover {
+  transform: translateY(3px);
+  box-shadow: 0 20px 20px #222831;
+}
+
+.btn--add:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 10px #222831;
+}
+
+.btn--add::after {
+  content: '';
+  background: #00adb5;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn--add:hover::after {
+  transform: scale(1.5, 1.5);
+  opacity: 0;
+}
+
+
+.todo--lists {
+  width: 33rem;
+  border-radius: 9%;
+}
+
+li {
+  width: 100%;
+  margin-bottom: 3px;
+  border-bottom: 1px solid #eaffd0;
+  padding: 4px;
+  font-size: 2rem;
+  color: #00adb5;
+  list-style-type: none;
+}
+
+span {
+text-transform: capitalize;
+}
+
+input {
+  width: 3rem;
+}
+
+input[type="checkbox"]:checked + span {
+  color: rgba(0, 173, 181, 0.37);
+  text-decoration: line-through;
+  text-decoration-color: #f38181;
+
+}
+
+
+.btn-delete,
+.btn-edit {
+  background: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  float: right;
+  padding-left: 20px;
+  color: rgba(238, 238, 238, 0.26);
+}
+
+.btn-delete:hover {
+  color: #f6416c;
+}
+
+.btn-edit:hover {
+  color: #00b8a9;
+}
+
+
+.feedback {
+  margin-top: 6rem;
+  width: 33rem;
+  height: 7rem;
+  background: #222831;
+  border-radius: 10px;
+  position: relative;
+  visibility: hidden;
+  box-shadow: 0 20px 20px #222831;
+}
+
+.feedback--message {
+  text-align: center;
+  color: #f6416c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
