@@ -36,14 +36,18 @@ function addItem(value) {
   li.innerHTML = `
       <input type="checkbox">
       <span class="items">${value}</span>
-      <button class="btn-delete"><i class="far fa-trash-alt fa-2x"></i></button>
-      <button class="btn-edit"><i class="fas fa-edit fa-2x"></i></button>`;
+      <!-- <button class="btn-delete"><i class="far fa-trash-alt fa-2x" id="delete"></i></button> -->
+      <!-- <button class="btn-edit"><i class="fas fa-edit fa-2x"></i></button> -->
+      `;
   todoList.appendChild(li);
 }
 
 // Get the dates
+
 function getDate() {
-  switch (new Date().getDay()) {
+  let todays = new Date().getDay();
+
+  switch (todays) {
     case 0:
       day = "Sunday";
       break;
@@ -65,5 +69,9 @@ function getDate() {
     case 6:
       day = "Saturday";
   }
+  let dates = new Date().getDate();
+  let month = new Date().getMonth() + 1;
+  let year = new Date().getFullYear();
   today.textContent = day;
+  date.textContent = `${month}/${dates}/${year}`;
 }
