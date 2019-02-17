@@ -7,6 +7,7 @@ let date = document.querySelector(".todo-date");
 let items = [];
 
 getDate();
+removeItem();
 
 // Check if there is an item to add to the list
 document.getElementById("add").addEventListener("click", function() {
@@ -36,10 +37,12 @@ function addItem(value) {
   li.innerHTML = `
       <input type="checkbox">
       <span class="items">${value}</span>
-      <!-- <button class="btn-delete"><i class="far fa-trash-alt fa-2x" id="delete"></i></button> -->
+      <button class="btn-delete"><i class="far fa-trash-alt fa-2x" id="delete"></i></button>
       <!-- <button class="btn-edit"><i class="fas fa-edit fa-2x"></i></button> -->
       `;
   todoList.appendChild(li);
+  // Delete Items
+  removeItem();
 }
 
 // Get the dates
@@ -74,4 +77,16 @@ function getDate() {
   let year = new Date().getFullYear();
   today.textContent = day;
   date.textContent = `${month}/${dates}/${year}`;
+}
+
+// Delete Items
+function removeItem() {
+  const remove = document.querySelectorAll(".btn-delete");
+  Array.from(remove).forEach(function(remove) {
+    remove.addEventListener("click", function() {
+      let item = this.parentNode;
+      let parent = this.parentNode.parentNode;
+      parent.removeChild(item);
+    });
+  });
 }

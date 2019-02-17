@@ -154,3 +154,7 @@ input[type="checkbox"]:checked + span {
   font-size: 1.5rem;
   text-transform: capitalize;
 }
+
+.test {
+  background: red;
+}
