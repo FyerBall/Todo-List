@@ -155,6 +155,18 @@ input[type="checkbox"]:checked + span {
   text-transform: capitalize;
 }
 
-.test {
-  background: red;
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+
+.todo--header {
+    text-align: center;
+    padding: 10px;
+    margin: 2rem auto;
+
+}
 }

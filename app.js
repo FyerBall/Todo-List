@@ -24,8 +24,10 @@ document.getElementById("add").addEventListener("click", function() {
     // Clear input after adding an item
     itemValue.value = "";
     // Add to Array
-    items.push(itemValue);
+    // items.push(itemValue);
     // console.log(items);
+
+    // Local Storage
   }
 });
 
@@ -41,6 +43,8 @@ function addItem(value) {
       <!-- <button class="btn-edit"><i class="fas fa-edit fa-2x"></i></button> -->
       `;
   todoList.appendChild(li);
+
+  items.push(value);
   // Delete Items
   removeItem();
 }
